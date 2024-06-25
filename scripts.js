@@ -1,27 +1,41 @@
+<<<<<<< HEAD
+=======
 
+>>>>>>> bd00b6d4b7be0791a8859a32899bf36dc546c734
 let soundEnabled = JSON.parse(localStorage.getItem('soundEnabled')) ?? true;
 let volume = localStorage.getItem('volume') ? parseFloat(localStorage.getItem('volume')) : 1.0;
 
 document.addEventListener('keydown', function(event) {
     const keyPressDiv = document.getElementById('key-press');
-    const keyElement = document.querySelector(`.key[data-key="${event.key.toUpperCase()}"]`);
+    
 
-    // Show which key is pressed
     keyPressDiv.textContent = `Key Pressed: ${event.key}`;
     keyPressDiv.classList.add('pressed');
+<<<<<<< HEAD
+    
+=======
    
     if (keyElement) {
         keyElement.classList.add('pressed');
     }
 
+>>>>>>> bd00b6d4b7be0791a8859a32899bf36dc546c734
     setTimeout(() => {
         keyPressDiv.classList.remove('pressed');
-        if (keyElement) {
-            keyElement.classList.remove('pressed');
-        }
     }, 200);
    
     if (!soundEnabled) return;
+<<<<<<< HEAD
+    
+    const sounds = [
+        'https://www.myinstants.com/media/sounds/trololo.mp3', 
+        'https://www.myinstants.com/media/sounds/fart-with-reverb.mp3', 
+        'https://www.myinstants.com/media/sounds/funny-bounce.mp3' 
+    ];
+    const randomIndex = Math.floor(Math.random() * sounds.length);
+    const audio = new Audio(sounds[randomIndex]);
+    
+=======
    
     const sounds = [
         'https://www.myinstants.com/media/sounds/trololo.mp3', // Funny Sound 1
@@ -31,6 +45,7 @@ document.addEventListener('keydown', function(event) {
     const randomIndex = Math.floor(Math.random() * sounds.length);
     const audio = new Audio(sounds[randomIndex]);
    
+>>>>>>> bd00b6d4b7be0791a8859a32899bf36dc546c734
     audio.volume = volume;
     audio.play();
 });
