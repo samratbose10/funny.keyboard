@@ -1,77 +1,71 @@
-
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    overflow: hidden;
 }
 
 .container {
     text-align: center;
-    background: #fff;
-    border-radius: 10px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-header {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 0;
-    border-radius: 10px 10px 0 0;
+.container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-    margin: 0;
-}
-
-main {
-    padding: 20px;
-}
-
-footer {
-    background-color: #007bff;
-    color: white;
-    padding: 10px 0;
-    border-radius: 0 0 10px 10px;
-}
-
-#key-press {
-    margin-top: 20px;
-    padding: 10px;
-    font-size: 2em;
+h1 {
+    font-size: 3em;
     color: #333;
-    border: 2px solid #333;
-    border-radius: 5px;
-    transition: all 0.2s;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
 }
 
-#key-press.pressed {
-    background-color: #ffc107;
-    color: #fff;
-    border-color: #ffc107;
+p {
+    font-size: 1.2em;
+    color: #666;
+    margin: 10px 0 20px;
+    animation: fadeIn 1.5s ease-in-out;
 }
 
-#toggle-sound {
+#image-container img {
+    max-width: 300px;
     margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #007bff;
-    color: #fff;
-    transition: background-color 0.2s;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
 }
 
-#toggle-sound:hover {
-    background-color: #0056b3;
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
-#volume-slider {
-    margin-top: 20px;
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    box-shadow: 0 0 10px white;
+    border-radius: 50%;
+    animation: twinkle 5s infinite;
 }
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
